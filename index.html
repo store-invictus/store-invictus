@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store Invictus | Tecnologia Premium</title>
+<meta name="description" content="Store Invictus – tecnologia premium com ofertas confiáveis via Mercado Livre. Smartphones, consoles e notebooks.">
+
+<!-- Ícones -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:linear-gradient(180deg,#05070f,#0b0f1a);color:#fff}
+
+/* HEADER STICKY */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:#000;
+  position:sticky;
+  top:0;
+  z-index:999;
+  box-shadow:0 2px 8px rgba(0,0,0,.5);
+}
+.logo{height:60px}
+nav a{color:#00aaff;margin-left:25px;text-decoration:none;font-weight:600;transition:.3s}
+nav a:hover{color:#00ffea}
+
+.hero{text-align:center;padding:80px 20px}
+.hero h1{font-size:52px;color:#00aaff;letter-spacing:2px;transition:.3s}
+.hero p{font-size:18px;margin-top:12px;color:#cfd8ff}
+
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;padding:50px}
+.product{
+  background:rgba(17,17,17,0.9);
+  padding:22px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transition:.3s;
+}
+.product:hover{transform:translateY(-6px);box-shadow:0 15px 35px rgba(0,170,255,.4);}
+.product img{
+  width:100%;
+  height:230px;
+  object-fit:contain;
+  border-radius:12px;
+  background:#000;
+  padding:10px;
+  transition:.3s;
+}
+.product img:hover{transform:scale(1.05);}
+.product h3{margin:18px 0 10px;color:#00aaff}
+.product p{font-size:15px;color:#d0d6ff}
+
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin-top:18px;
+  padding:14px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+}
+.buy{background:#00aaff;color:#000}
+.buy:hover{background:#00ffea;color:#000}
+
+footer{text-align:center;padding:25px;background:#000;font-size:14px;color:#aaa;display:flex;flex-direction:column;gap:8px;align-items:center}
+
+/* SELLOS DE CONFIANÇA */
+.trust{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:10px;
+}
+.trust i{font-size:28px;color:#00aaff}
+
+/* WhatsApp flutuante */
+.whatsapp-float{
+  position:fixed;bottom:22px;right:22px;
+  background:#25d366;color:#fff;
+  width:60px;height:60px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:50%;font-size:30px;
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+  text-decoration:none;z-index:1000
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  header{flex-direction:column;gap:15px;padding:20px}
+  .hero h1{font-size:34px}
+  .products{padding:25px}
+  .product img{height:200px}
+  .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Store Invictus" class="logo">
+  <nav>
+    <a href="#produtos">Produtos</a>
+    <a href="https://wa.me/5512988060658" target="_blank">Contato</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>STORE INVICTUS</h1>
+  <p>Tecnologia premium. Ofertas selecionadas. Compra segura.</p>
+</section>
+
+<section class="products" id="produtos">
+
+    <div class="product">
+        <img src="images/iphone16.jpg" alt="iPhone 16">
+        <h3>iPhone 16 – 128GB</h3>
+        <p>Performance extrema, câmera avançada e design premium.</p>
+        <a href="https://mercadolivre.com/sec/1X5TLFu" target="_blank" class="btn buy">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="images/iphone15.jpg" alt="iPhone 15">
+        <h3>iPhone 15 – 128GB</h3>
+        <p>Design moderno, fluidez e qualidade Apple.</p>
+        <a href="https://mercadolivre.com/sec/25uu27t" target="_blank" class="btn buy">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="images/galaxy-a16.jpg" alt="Samsung Galaxy A16">
+        <h3>Samsung Galaxy A16</h3>
+        <p>Câmera 50MP e excelente custo-benefício.</p>
+        <a href="https://mercadolivre.com/sec/2jTpvxy" target="_blank" class="btn buy">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="images/ps5-slim.jpg" alt="PlayStation 5 Slim">
+        <h3>PlayStation 5 Slim</h3>
+        <p>Console com gráficos de última geração.</p>
+        <a href="https://mercadolivre.com/sec/29GoWAy" target="_blank" class="btn buy">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="images/dell-inspiron.jpg" alt="Notebook Dell Inspiron">
+        <h3>Notebook Dell Inspiron i5</h3>
+        <p>16GB RAM, 1TB SSD, ideal para trabalho e estudos.</p>
+        <a href="https://mercadolivre.com/sec/1Zk6j7G" target="_blank" class="btn buy">Comprar</a>
+    </div>
+
+</section>
+
+<footer>
+  <p>© 2026 STORE INVICTUS • Produtos originais • Compra segura via Mercado Livre</p>
+  <div class="trust">
+    <i class="fa-solid fa-shield-halved" title="Compra segura"></i>
+    <i class="fa-solid fa-truck-fast" title="Entrega rápida"></i>
+    <i class="fa-solid fa-thumbs-up" title="Produto de qualidade"></i>
+  </div>
+</footer>
+
+<a href="https://wa.me/5512988060658" class="whatsapp-float" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+
+</body>
+</html>
