@@ -1,36 +1,70 @@
+/* ================= DESIGN SYSTEM ================= */
 :root{
   --primary:#00aaff;
   --accent:#00ffea;
+
   --bg-dark:#05070f;
   --bg-card:#111;
+  --bg-header:#000;
+
   --text-muted:#cfd8ff;
+  --text-light:#ffffff;
+
+  --radius-sm:10px;
+  --radius-md:16px;
+
+  --shadow-sm:0 6px 20px rgba(0,0,0,.35);
+  --shadow-lg:0 15px 35px rgba(0,255,234,.4);
+
+  --transition-fast:.2s ease;
+  --transition-base:.3s ease;
+
+  --space-xs:8px;
+  --space-sm:12px;
+  --space-md:20px;
+  --space-lg:50px;
 }
 
-*{
+/* ================= RESET ================= */
+*,
+*::before,
+*::after{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
+  font-family:'Segoe UI', Arial, sans-serif;
   background:linear-gradient(180deg,var(--bg-dark),#0b0f1a);
-  color:#fff;
+  color:var(--text-light);
+  line-height:1.6;
 }
 
+/* ================= HEADER ================= */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 50px;
-  background:#000;
+  padding:var(--space-md) var(--space-lg);
+  background:var(--bg-header);
   position:sticky;
   top:0;
-  z-index:999;
+  z-index:1000;
 }
 
 .logo{
   height:60px;
+}
+
+/* ================= NAV ================= */
+nav{
+  display:flex;
+  align-items:center;
 }
 
 nav a{
@@ -38,16 +72,24 @@ nav a{
   margin-left:25px;
   text-decoration:none;
   font-weight:600;
-  transition:.25s;
+  transition:color var(--transition-fast);
 }
 
 nav a:hover{
   color:var(--accent);
 }
 
+/* Acessibilidade: foco visível */
+nav a:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+  border-radius:4px;
+}
+
+/* ================= HERO ================= */
 .hero{
   text-align:center;
-  padding:80px 20px;
+  padding:80px var(--space-md);
 }
 
 .hero h1{
@@ -57,26 +99,27 @@ nav a:hover{
 
 .hero p{
   font-size:18px;
-  margin-top:12px;
+  margin-top:var(--space-sm);
   color:var(--text-muted);
 }
 
+/* ================= TRUST ================= */
 .trust{
   display:flex;
   justify-content:center;
   gap:30px;
-  padding:20px;
+  padding:var(--space-md);
   font-size:14px;
   color:var(--text-muted);
   flex-wrap:wrap;
 }
 
+/* ================= PRODUCTS ================= */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  padding:50px;
-  grid-auto-rows:minmax(360px, auto);
+  padding:var(--space-lg);
 }
 
 .section-title{
@@ -84,21 +127,23 @@ nav a:hover{
   text-align:center;
   font-size:32px;
   color:var(--accent);
-  margin-bottom:20px;
+  margin-bottom:var(--space-md);
 }
 
+/* ================= PRODUCT CARD ================= */
 .product{
   background:var(--bg-card);
   padding:22px;
-  border-radius:16px;
+  border-radius:var(--radius-md);
   text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-  transition:.3s;
+  box-shadow:var(--shadow-sm);
+  transition:transform var(--transition-base), box-shadow var(--transition-base);
+  will-change:transform;
 }
 
 .product:hover{
   transform:translateY(-6px) scale(1.02);
-  box-shadow:0 15px 35px rgba(0,255,234,.4);
+  box-shadow:var(--shadow-lg);
 }
 
 .product img{
@@ -106,7 +151,7 @@ nav a:hover{
   height:230px;
   object-fit:contain;
   background:#000;
-  border-radius:12px;
+  border-radius:var(--radius-sm);
   padding:10px;
 }
 
@@ -120,16 +165,22 @@ nav a:hover{
   color:var(--text-muted);
 }
 
+/* ================= BUTTONS ================= */
 .btn{
   display:flex;
   align-items:center;
   justify-content:center;
   margin-top:18px;
   padding:14px;
-  border-radius:10px;
+  border-radius:var(--radius-sm);
   font-weight:700;
   text-decoration:none;
-  transition:.25s;
+  transition:background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn:focus-visible{
+  outline:3px solid var(--accent);
+  outline-offset:3px;
 }
 
 .buy{
@@ -140,8 +191,10 @@ nav a:hover{
 .buy:hover{
   background:var(--accent);
   box-shadow:0 0 18px rgba(0,255,234,.6);
+  transform:translateY(-1px);
 }
 
+/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:25px;
@@ -150,6 +203,7 @@ footer{
   color:#aaa;
 }
 
+/* ================= WHATSAPP FLOAT ================= */
 .whatsapp-float{
   position:fixed;
   bottom:22px;
@@ -164,14 +218,20 @@ footer{
   justify-content:center;
   font-size:30px;
   text-decoration:none;
-  transition:.25s;
+  transition:transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .whatsapp-float:hover{
   transform:scale(1.1);
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-/* ================= MENU MÓVEL ================= */
+.whatsapp-float:focus-visible{
+  outline:3px solid #fff;
+  outline-offset:4px;
+}
+
+/* ================= MENU MOBILE ================= */
 .menu-toggle{
   display:none;
   background:none;
@@ -181,10 +241,41 @@ footer{
   cursor:pointer;
 }
 
-/* MOBILE RESPONSIVO */
+.menu-toggle:focus-visible{
+  outline:2px solid var(--accent);
+  outline-offset:4px;
+}
+
+/* ================= MOBILE ================= */
 @media(max-width:768px){
   header{
+    flex-direction:row;
+    padding:var(--space-md);
+  }
+
+  nav{
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:var(--bg-header);
     flex-direction:column;
+    align-items:center;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height var(--transition-base);
+  }
+
+  nav.open{
+    max-height:300px;
+  }
+
+  nav a{
+    margin:15px 0;
+  }
+
+  .menu-toggle{
+    display:block;
   }
 
   .hero h1{
@@ -195,30 +286,13 @@ footer{
     padding:30px;
     gap:18px;
   }
+}
 
-  nav{
-    position:absolute;
-    top:80px; /* abaixo do header */
-    left:0;
-    width:100%;
-    background:#000;
-    flex-direction:column;
-    align-items:center;
-    overflow:hidden;
-    max-height:0;
-    transition:max-height 0.3s ease;
-  }
-
-  nav a{
-    margin:15px 0;
-  }
-
-  nav.open{
-    max-height:500px; /* altura suficiente para mostrar todos os links */
-  }
-
-  .menu-toggle{
-    display:block;
-    margin-top:10px;
+/* ================= REDUÇÃO DE MOVIMENTO ================= */
+@media (prefers-reduced-motion: reduce){
+  *{
+    animation:none !important;
+    transition:none !important;
+    scroll-behavior:auto;
   }
 }
