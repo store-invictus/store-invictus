@@ -10,6 +10,7 @@
   // Estado inicial de acessibilidade
   menuToggle.setAttribute('aria-expanded', 'false');
 
+  // Funções de abrir/fechar
   const openMenu = () => {
     nav.classList.add('open');
     menuToggle.setAttribute('aria-expanded', 'true');

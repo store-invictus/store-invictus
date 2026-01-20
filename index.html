@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Store Invictus | Tecnologia Premium com Compra Segura</title>
   <meta name="description" content="Store Invictus oferece tecnologia premium com compra segura via Mercado Livre. Produtos originais, pagamento protegido e ofertas selecionadas.">
-
-  <!-- SEO -->
   <meta name="robots" content="index, follow">
   <meta name="author" content="Store Invictus">
   <link rel="canonical" href="https://store-invictus.github.io/store-invictus/">
@@ -17,20 +14,27 @@
   <meta property="og:description" content="Tecnologia premium com compra segura via Mercado Livre.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://store-invictus.github.io/store-invictus/">
-  <meta property="og:image" content="https://store-invictus.github.io/store-invictus/logo.png">
-
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="GckI1QVkLPm2lOjrVKs5i6H4x9-jXCBQ2ghKuvX8iO8">
+  <meta property="og:image" content="logo.png">
 
   <!-- Font Awesome -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
-</head>
 
+  <!-- Schema Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Store Invictus",
+    "url": "https://store-invictus.github.io/store-invictus/",
+    "logo": "logo.png",
+    "sameAs": ["https://wa.me/5512988060658"]
+  }
+  </script>
+</head>
 <body>
 
 <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
@@ -38,11 +42,11 @@
 <header>
   <img src="logo.png" alt="Store Invictus — Tecnologia Premium" class="logo">
 
-  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-    <i class="fa-solid fa-bars"></i>
+  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal">
+    <i class="fa-solid fa-bars" aria-hidden="true"></i>
   </button>
 
-  <nav>
+  <nav id="menu-principal">
     <a href="#produtos">Produtos</a>
     <a href="https://wa.me/5512988060658" target="_blank" rel="noopener">Contato</a>
   </nav>
@@ -50,102 +54,105 @@
 
 <main id="conteudo">
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Store Invictus</h1>
     <p>Tecnologia premium. Ofertas selecionadas.</p>
   </section>
 
+  <!-- TRUST -->
   <section class="trust">
     <p>✔ Produtos originais</p>
     <p>✔ Compra protegida pelo Mercado Livre</p>
     <p>✔ Pagamento seguro e rastreado</p>
   </section>
 
+  <!-- PRODUTOS -->
   <section class="products" id="produtos">
     <h2 class="section-title">Produtos em destaque</h2>
 
     <article class="product">
-      <img src="images/maquina-dragao-buda-kamufla.jpg" loading="lazy" alt="Máquina Dragão Buda">
+      <img src="images/maquina-dragao-buda-kamufla.jpg" loading="lazy" width="260" height="230" alt="Máquina Dragão Buda profissional para barbearia">
       <h3>Máquina Dragão Buda Profissional</h3>
-      <p>Motor potente e acabamento profissional.</p>
-      <a href="produtos/maquina-dragao-buda.html" class="btn buy">Ver detalhes</a>
+      <p>Motor potente, corte preciso e acabamento profissional para barbearias.</p>
+      <a href="produtos/maquina-dragao-buda.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/aparador-super-groom10-mondial.jpg" loading="lazy" alt="Aparador Super Groom 10">
-      <h3>Aparador Super Groom 10 Mondial</h3>
-      <p>10 em 1 para barba, cabelo e corpo.</p>
-      <a href="produtos/aparador-super-groom-10.html" class="btn buy">Ver detalhes</a>
+      <img src="images/aparador-super-groom10-mondial.jpg" loading="lazy" width="260" height="230" alt="Aparador de Pelos Super Groom 10 Mondial">
+      <h3>Aparador de Pelos Super Groom 10 Mondial</h3>
+      <p>10 em 1 para barba, cabelo e corpo. Lâminas em aço inox e bateria recarregável.</p>
+      <a href="produtos/aparador-super-groom-10.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/balanca-digital-vidro.jpg" loading="lazy" alt="Balança Digital">
+      <img src="images/balanca-digital-vidro.jpg" loading="lazy" width="260" height="230" alt="Balança digital corporal de vidro até 180kg">
       <h3>Balança Digital Corporal</h3>
-      <p>Até 180kg com visor digital.</p>
-      <a href="produtos/balanca-digital.html" class="btn buy">Ver detalhes</a>
+      <p>Capacidade até 180kg, visor digital e design moderno em vidro temperado.</p>
+      <a href="produtos/balanca-digital-corporal.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/iphone16.jpg" loading="lazy" alt="iPhone 16">
+      <img src="images/iphone16.jpg" loading="lazy" width="260" height="230" alt="iPhone 16 128GB Apple original">
       <h3>iPhone 16 – 128GB</h3>
-      <p>Desempenho avançado e câmera poderosa.</p>
-      <a href="produtos/iphone-16-128gb.html" class="btn buy">Ver detalhes</a>
+      <p>Chip avançado, câmera poderosa e bateria otimizada.</p>
+      <a href="produtos/iphone-16.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/iphone15.jpg" loading="lazy" alt="iPhone 15">
+      <img src="images/iphone15.jpg" loading="lazy" width="260" height="230" alt="iPhone 15 128GB Apple original">
       <h3>iPhone 15 – 128GB</h3>
-      <p>Design moderno e alto desempenho.</p>
-      <a href="produtos/iphone-15-128gb.html" class="btn buy">Ver detalhes</a>
+      <p>Design moderno e excelente desempenho no ecossistema Apple.</p>
+      <a href="produtos/iphone-15.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/galaxy-a16.jpg" loading="lazy" alt="Galaxy A16">
+      <img src="images/galaxy-a16.jpg" loading="lazy" width="260" height="230" alt="Samsung Galaxy A16 smartphone">
       <h3>Samsung Galaxy A16</h3>
-      <p>Ótimo custo-benefício para o dia a dia.</p>
-      <a href="produtos/galaxy-a16.html" class="btn buy">Ver detalhes</a>
+      <p>Tela ampla, boa câmera e ótimo custo-benefício.</p>
+      <a href="produtos/galaxy-a16.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/ps5-slim.jpg" loading="lazy" alt="PS5 Slim">
+      <img src="images/ps5-slim.jpg" loading="lazy" width="260" height="230" alt="PlayStation 5 Slim console">
       <h3>PlayStation 5 Slim</h3>
-      <p>Gráficos de nova geração.</p>
-      <a href="produtos/ps5-slim.html" class="btn buy">Ver detalhes</a>
+      <p>Gráficos de nova geração e jogos exclusivos.</p>
+      <a href="produtos/ps5-slim.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/dell-inspiron.jpg" loading="lazy" alt="Dell Inspiron i5">
+      <img src="images/dell-inspiron.jpg" loading="lazy" width="260" height="230" alt="Notebook Dell Inspiron i5">
       <h3>Dell Inspiron i5</h3>
-      <p>Performance para trabalho e estudo.</p>
-      <a href="produtos/dell-inspiron-i5.html" class="btn buy">Ver detalhes</a>
+      <p>Intel i5, 16GB RAM e SSD de 1TB para alto desempenho.</p>
+      <a href="produtos/dell-inspiron-i5.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/barra-fixa-parede-pullup.jpg" loading="lazy" alt="Barra Fixa">
+      <img src="images/barra-fixa-parede-pullup.jpg" loading="lazy" width="260" height="230" alt="Barra fixa de parede pull-up">
       <h3>Barra Fixa Pull-Up</h3>
-      <p>Treinos completos em casa.</p>
-      <a href="produtos/barra-fixa-parede.html" class="btn buy">Ver detalhes</a>
+      <p>Estrutura reforçada para treinos completos em casa.</p>
+      <a href="produtos/barra-fixa-parede-pullup.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/mini-compressor-digital-simake.jpg" loading="lazy" alt="Mini Compressor">
-      <h3>Mini Compressor Digital</h3>
-      <p>Portátil e prático.</p>
-      <a href="produtos/mini-compressor-digital.html" class="btn buy">Ver detalhes</a>
+      <img src="images/mini-compressor-digital-simake.jpg" loading="lazy" width="260" height="230" alt="Mini compressor digital Simake">
+      <h3>Mini Compressor Digital Simake</h3>
+      <p>Portátil, prático e ideal para pneus e infláveis.</p>
+      <a href="produtos/mini-compressor-digital.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/arma-bolinha-gel-ak47.jpg" loading="lazy" alt="AK47 Gel">
+      <img src="images/arma-bolinha-gel-ak47.jpg" loading="lazy" width="260" height="230" alt="Arma de bolinhas de gel AK47">
       <h3>Arma Bolinha de Gel AK47</h3>
-      <p>Diversão ao ar livre.</p>
-      <a href="produtos/arma-bolinha-gel-ak47.html" class="btn buy">Ver detalhes</a>
+      <p>Brinquedo automático para diversão ao ar livre.</p>
+      <a href="produtos/arma-bolinha-gel-ak47.html" class="btn buy">Comprar</a>
     </article>
 
     <article class="product">
-      <img src="images/jbl-tune-520bt.jpg" loading="lazy" alt="JBL 520BT">
+      <img src="images/jbl-tune-520bt.jpg" loading="lazy" width="260" height="230" alt="Fone JBL Tune 520BT">
       <h3>JBL Tune 520BT</h3>
-      <p>Som JBL com até 57h de bateria.</p>
-      <a href="produtos/jbl-tune-520bt.html" class="btn buy">Ver detalhes</a>
+      <p>Até 57h de bateria com som JBL Pure Bass.</p>
+      <a href="produtos/jbl-tune-520bt.html" class="btn buy">Comprar</a>
     </article>
 
   </section>
@@ -155,8 +162,8 @@
   © 2026 Store Invictus • Compra segura via Mercado Livre
 </footer>
 
-<a href="https://wa.me/5512988060658" class="whatsapp-float" target="_blank" rel="noopener">
-  <i class="fa-brands fa-whatsapp"></i>
+<a href="https://wa.me/5512988060658" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 
 <script src="js/script.js" defer></script>
