@@ -13,25 +13,23 @@ layout: null
     <priority>1.0</priority>
   </url>
 
-  <!-- Página de produtos -->
+  <!-- Seções do site -->
   <url>
-    <loc>https://store-invictus.github.io/store-invictus/produtos.html</loc>
+    <loc>https://store-invictus.github.io/store-invictus/#produtos</loc>
     <lastmod>2026-01-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Página de contato -->
   <url>
-    <loc>https://store-invictus.github.io/store-invictus/contato.html</loc>
+    <loc>https://store-invictus.github.io/store-invictus/#contato</loc>
     <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- Página sobre -->
   <url>
-    <loc>https://store-invictus.github.io/store-invictus/sobre.html</loc>
+    <loc>https://store-invictus.github.io/store-invictus/#sobre</loc>
     <lastmod>2026-01-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

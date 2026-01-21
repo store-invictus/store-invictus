@@ -1,74 +1,36 @@
-/* ================= DESIGN SYSTEM ================= */
 :root{
   --primary:#00aaff;
   --accent:#00ffea;
-
   --bg-dark:#05070f;
   --bg-card:#111;
-  --bg-header:#000;
-
   --text-muted:#cfd8ff;
-  --text-light:#ffffff;
-
-  --radius-sm:10px;
-  --radius-md:16px;
-
-  --shadow-sm:0 6px 20px rgba(0,0,0,.35);
-  --shadow-lg:0 15px 35px rgba(0,255,234,.4);
-
-  --transition-fast:.2s ease;
-  --transition-base:.3s ease;
-
-  --space-xs:8px;
-  --space-sm:12px;
-  --space-md:20px;
-  --space-lg:50px;
-
-  --font-base:16px;
-  --font-small:15px;
 }
 
-/* ================= RESET ================= */
-*,
-*::before,
-*::after{
+*{
   margin:0;
   padding:0;
   box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-  font-size:var(--font-base);
+  font-family:'Segoe UI',Arial,sans-serif;
 }
 
 body{
-  font-family:'Segoe UI', Arial, sans-serif;
   background:linear-gradient(180deg,var(--bg-dark),#0b0f1a);
-  color:var(--text-light);
-  line-height:1.6;
+  color:#fff;
 }
 
-/* ================= HEADER ================= */
 header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:var(--space-md) var(--space-lg);
-  background:var(--bg-header);
+  padding:20px 50px;
+  background:#000;
   position:sticky;
   top:0;
-  z-index:1000;
+  z-index:999;
 }
 
 .logo{
   height:60px;
-}
-
-/* ================= NAV ================= */
-nav{
-  display:flex;
-  align-items:center;
 }
 
 nav a{
@@ -76,25 +38,16 @@ nav a{
   margin-left:25px;
   text-decoration:none;
   font-weight:600;
-  transition:color var(--transition-fast);
+  transition:.25s;
 }
 
-nav a:hover,
-nav a:focus-visible{
+nav a:hover{
   color:var(--accent);
 }
 
-/* Foco acessível */
-nav a:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:4px;
-  border-radius:4px;
-}
-
-/* ================= HERO ================= */
 .hero{
   text-align:center;
-  padding:80px var(--space-md);
+  padding:80px 20px;
 }
 
 .hero h1{
@@ -104,27 +57,26 @@ nav a:focus-visible{
 
 .hero p{
   font-size:18px;
-  margin-top:var(--space-sm);
+  margin-top:12px;
   color:var(--text-muted);
 }
 
-/* ================= TRUST ================= */
 .trust{
   display:flex;
   justify-content:center;
   gap:30px;
-  padding:var(--space-md);
+  padding:20px;
   font-size:14px;
   color:var(--text-muted);
   flex-wrap:wrap;
 }
 
-/* ================= PRODUCTS ================= */
 .products{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
-  padding:var(--space-lg);
+  padding:50px;
+  grid-auto-rows:minmax(360px, auto);
 }
 
 .section-title{
@@ -132,31 +84,29 @@ nav a:focus-visible{
   text-align:center;
   font-size:32px;
   color:var(--accent);
-  margin-bottom:var(--space-md);
+  margin-bottom:20px;
 }
 
-/* ================= PRODUCT CARD ================= */
 .product{
   background:var(--bg-card);
   padding:22px;
-  border-radius:var(--radius-md);
+  border-radius:16px;
   text-align:center;
-  box-shadow:var(--shadow-sm);
-  transition:transform var(--transition-base), box-shadow var(--transition-base);
-  will-change:transform;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  transition:.3s;
 }
 
 .product:hover{
   transform:translateY(-6px) scale(1.02);
-  box-shadow:var(--shadow-lg);
+  box-shadow:0 15px 35px rgba(0,255,234,.4);
 }
 
 .product img{
   width:100%;
-  aspect-ratio: 260 / 230;
+  height:230px;
   object-fit:contain;
   background:#000;
-  border-radius:var(--radius-sm);
+  border-radius:12px;
   padding:10px;
 }
 
@@ -166,26 +116,20 @@ nav a:focus-visible{
 }
 
 .product p{
-  font-size:var(--font-small);
+  font-size:15px;
   color:var(--text-muted);
 }
 
-/* ================= BUTTONS ================= */
 .btn{
   display:flex;
   align-items:center;
   justify-content:center;
   margin-top:18px;
   padding:14px;
-  border-radius:var(--radius-sm);
+  border-radius:10px;
   font-weight:700;
   text-decoration:none;
-  transition:background var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
-}
-
-.btn:focus-visible{
-  outline:3px solid var(--accent);
-  outline-offset:3px;
+  transition:.25s;
 }
 
 .buy{
@@ -196,10 +140,8 @@ nav a:focus-visible{
 .buy:hover{
   background:var(--accent);
   box-shadow:0 0 18px rgba(0,255,234,.6);
-  transform:translateY(-1px);
 }
 
-/* ================= FOOTER ================= */
 footer{
   text-align:center;
   padding:25px;
@@ -208,7 +150,6 @@ footer{
   color:#aaa;
 }
 
-/* ================= WHATSAPP FLOAT ================= */
 .whatsapp-float{
   position:fixed;
   bottom:22px;
@@ -223,20 +164,14 @@ footer{
   justify-content:center;
   font-size:30px;
   text-decoration:none;
-  transition:transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition:.25s;
 }
 
 .whatsapp-float:hover{
   transform:scale(1.1);
-  box-shadow:0 10px 25px rgba(0,0,0,.4);
 }
 
-.whatsapp-float:focus-visible{
-  outline:3px solid #fff;
-  outline-offset:4px;
-}
-
-/* ================= MENU MOBILE ================= */
+/* ================= MENU MÓVEL ================= */
 .menu-toggle{
   display:none;
   background:none;
@@ -246,46 +181,10 @@ footer{
   cursor:pointer;
 }
 
-.menu-toggle:focus-visible{
-  outline:2px solid var(--accent);
-  outline-offset:4px;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE RESPONSIVO */
 @media(max-width:768px){
   header{
-    flex-direction:row;
-    padding:var(--space-md);
-  }
-
-  nav{
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    background:var(--bg-header);
     flex-direction:column;
-    align-items:center;
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    transform:translateY(-20px);
-    transition: max-height var(--transition-base), opacity var(--transition-base), transform var(--transition-base);
-  }
-
-  nav.open{
-    max-height:500px;
-    opacity:1;
-    transform:translateY(0);
-  }
-
-  nav a{
-    margin:15px 0;
-    font-size:18px;
-  }
-
-  .menu-toggle{
-    display:block;
   }
 
   .hero h1{
@@ -296,12 +195,30 @@ footer{
     padding:30px;
     gap:18px;
   }
-}
 
-/* ================= REDUÇÃO DE MOVIMENTO ================= */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
+  nav{
+    position:absolute;
+    top:80px; /* abaixo do header */
+    left:0;
+    width:100%;
+    background:#000;
+    flex-direction:column;
+    align-items:center;
+    overflow:hidden;
+    max-height:0;
+    transition:max-height 0.3s ease;
+  }
+
+  nav a{
+    margin:15px 0;
+  }
+
+  nav.open{
+    max-height:500px; /* altura suficiente para mostrar todos os links */
+  }
+
+  .menu-toggle{
+    display:block;
+    margin-top:10px;
   }
 }
