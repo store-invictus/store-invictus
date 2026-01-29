@@ -1,0 +1,15 @@
+# robots.txt - Invictus Gaming
+
+User-agent: *
+Allow: /
+
+# Permite crawlers acessarem produtos
+Allow: /produtos/
+
+# Bloqueia arquivos de sistema
+Disallow: /js/
+Disallow: /*.css$
+Disallow: /*.js$
+
+# Sitemap
+Sitemap: https://store-invictus.github.io/store-invictus/sitemap.xml
