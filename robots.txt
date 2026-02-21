@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Não bloquear assets — bots precisam ver imagens para renderizar o site
+# Apenas bloquear o que realmente não deve ser indexado
+Disallow: /assets/img/favicon*
+
+# Sitemap
+Sitemap: https://storeinvictus.com.br/sitemap.xml

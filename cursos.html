@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cursos de Marketing Digital | Store Invictus</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo.png">
+  <meta name="theme-color" content="#E8001D">
+  <meta name="description" content="Cursos online de marketing digital curados pela Store Invictus. Tráfego pago, afiliados, copywriting, redes sociais, email marketing e SEO.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/cursos.html">
+  <meta property="og:title" content="Cursos de Marketing Digital | Store Invictus">
+  <meta property="og:description" content="Encontre os melhores cursos de marketing digital. Do básico ao avançado.">
+  <meta property="og:image" content="/assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .filters-bar {
+      background: var(--preto-2);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 20px 0;
+      position: sticky; top: 65px; z-index: 100;
+    }
+    .filters-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .filter-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--cinza-light);
+      margin-right: 4px; white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 7px 18px; border-radius: 50px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: 1px solid rgba(255,255,255,0.09);
+      background: transparent; color: var(--cinza-light); transition: var(--trans-fast);
+    }
+    .filter-btn:hover { border-color: var(--vermelho); color: var(--branco); }
+
+    /* CARD DE CURSO */
+    .cursos-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px; margin-top: 48px;
+    }
+    .curso-card {
+      background: var(--cinza-dark); border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-xl); overflow: hidden;
+      transition: var(--trans); display: flex; flex-direction: column;
+    }
+    .curso-card:hover { transform: translateY(-7px); border-color: rgba(232,0,29,0.2); box-shadow: 0 28px 56px rgba(0,0,0,0.35); }
+    .curso-thumb {
+      height: 172px; display: flex; align-items: center; justify-content: center;
+      font-size: 60px; position: relative;
+    }
+    .curso-thumb::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 56px; background: linear-gradient(transparent, var(--cinza-dark));
+    }
+    .thumb-a { background: linear-gradient(145deg, rgba(232,0,29,0.28), rgba(0,200,83,0.16)); }
+    .thumb-b { background: linear-gradient(145deg, rgba(0,200,83,0.18), rgba(232,0,29,0.16)); }
+    .thumb-c { background: linear-gradient(145deg, rgba(0,200,83,0.28), rgba(232,0,29,0.16)); }
+    .curso-body { padding: 20px 22px 22px; flex: 1; display: flex; flex-direction: column; }
+    .curso-meta { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+    .nivel {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 50px;
+    }
+    .nivel-iniciante     { background: rgba(0,200,83,0.12); color: var(--verde); }
+    .nivel-intermediario { background: rgba(255,255,255,0.06); color: var(--cinza-light); }
+    .nivel-avancado      { background: rgba(232,0,29,0.12); color: var(--vermelho); }
+    .curso-rating { font-size: 12px; color: var(--cinza-light); }
+    .curso-title { font-family: var(--fonte-display); font-size: 20px; letter-spacing: 1px; margin-bottom: 8px; line-height: 1.15; }
+    .curso-desc { font-size: 13px; color: var(--cinza-light); line-height: 1.65; margin-bottom: 16px; flex: 1; }
+    .curso-specs { display: flex; gap: 14px; margin-bottom: 16px; font-size: 12px; color: var(--cinza-light); flex-wrap: wrap; }
+    .curso-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .curso-price { font-family: var(--fonte-display); font-size: 26px; letter-spacing: 1px; }
+    .price-free { color: var(--verde); }
+    .price-paid { color: var(--vermelho); }
+    .btn-curso {
+      padding: 9px 18px; border-radius: 50px; font-size: 13px; font-weight: 700;
+      background: var(--grad-marca); color: var(--branco); transition: var(--trans);
+      border: none; cursor: pointer; font-family: var(--fonte-corpo);
+      text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+    }
+    .btn-curso:hover { transform: translateY(-2px); box-shadow: 0 8px 20px var(--vermelho-glow); }
+    @media (max-width: 1024px) { .cursos-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .cursos-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="Store Invictus — Página inicial">
+        <img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="42" height="42">
+        <div class="logo-text">
+          <span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="cursos.html" class="btn-nav">Explorar Cursos</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Início</a><a href="cursos.html">Cursos</a>
+    <a href="ebooks.html">Ebooks</a><a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="cursos.html" class="btn-nav">Explorar Cursos →</a>
+  </nav>
+
+  <main id="main-content">
+    <header class="page-hero" aria-label="Cabeçalho da página Cursos">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="noise-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <span class="badge badge-verm">🎓 Aprenda Agora</span>
+        <div class="divider divider-center"></div>
+        <h1>CURSOS DE <span class="text-gradient">MARKETING DIGITAL</span></h1>
+        <p>Do básico ao avançado. Escolha o curso certo para o seu momento e acelere sua jornada.</p>
+      </div>
+    </header>
+
+    <div class="filters-bar" id="categorias" role="search" aria-label="Filtrar cursos por categoria">
+      <div class="container">
+        <div class="filters-inner" data-filter-group>
+          <span class="filter-label">Filtrar:</span>
+          <button class="filter-btn active" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter-btn" data-filter="trafego"  aria-pressed="false">🎯 Tráfego Pago</button>
+          <button class="filter-btn" data-filter="afiliados" aria-pressed="false">🤝 Afiliados</button>
+          <button class="filter-btn" data-filter="copy"     aria-pressed="false">✍️ Copywriting</button>
+          <button class="filter-btn" data-filter="social"   aria-pressed="false">📱 Redes Sociais</button>
+          <button class="filter-btn" data-filter="email"    aria-pressed="false">📧 Email Marketing</button>
+          <button class="filter-btn" data-filter="seo"      aria-pressed="false">🌐 SEO</button>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" aria-labelledby="cursos-heading">
+      <div class="container">
+        <h2 id="cursos-heading" class="sr-only">Lista de Cursos</h2>
+        <div class="aviso-afiliado" role="note">
+          <span class="icon" aria-hidden="true">⚠️</span>
+          <p><strong>Aviso de Afiliado:</strong> Os cursos desta página são produtos de terceiros. Ao comprar pelo meu link, recebo uma comissão — sem nenhum custo adicional para você. Só recomendo o que acredito genuinamente.</p>
+        </div>
+
+        <div class="cursos-grid">
+
+          <!-- ═══ MARKETING DIGITAL E TRÁFEGO PAGO ═══ -->
+          <article class="curso-card" data-reveal>
+            <div class="curso-thumb thumb-a" style="background:linear-gradient(145deg,rgba(232,0,29,0.28),rgba(0,200,83,0.16));overflow:hidden;padding:0;">
+              <img
+                src="https://static-media.hotmart.com/dFAZlVeHTL_A3FwHymQR8N3b9-0=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/85e15cf6-33d7-49de-86f1-3ee521fa335b/CURSODEMARKETINGDIGITALETRAFEGOPAGO.jpg"
+                alt="Capa do curso Marketing Digital e Tráfego Pago"
+                style="width:100%;height:100%;object-fit:cover;display:none;"
+                onload="this.style.display='block';this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              >
+              <span style="font-size:60px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">🎯</span>
+            </div>
+            <div class="curso-body">
+              <div class="curso-meta">
+                <span class="nivel nivel-intermediario">Intermediário</span>
+                <span class="curso-rating">★★★★★ (5.0)</span>
+              </div>
+              <h3 class="curso-title">MARKETING DIGITAL E TRÁFEGO PAGO</h3>
+              <p class="curso-desc">Domine estratégias de redes sociais, Facebook Business e Google ADS. Inclui 2 lives de mentoria ao vivo para tirar dúvidas e direcionamento no mercado digital.</p>
+              <div class="curso-specs">
+                <span>🎯 Facebook & Google ADS</span>
+                <span>🎥 2 lives de mentoria</span>
+                <span>🏆 Bem avaliado</span>
+                <span>🇧🇷 Português</span>
+              </div>
+              <div class="curso-footer">
+                <div class="curso-price price-paid">
+                  <span style="font-size:20px;font-family:var(--fonte-display);color:var(--vermelho-mid);">R$ 29,90</span>
+                  <span style="font-size:10px;color:var(--cinza-light);font-family:var(--fonte-corpo);font-weight:400;">ou 4x de R$ 8,14 no cartão</span>
+                </div>
+                <a href="https://go.hotmart.com/Q104539868J" target="_blank" rel="noopener sponsored" class="btn-curso">Ver Curso →</a>
+              </div>
+              <a href="https://go.hotmart.com/Q104539868J" target="_blank" rel="noopener sponsored"
+                style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:13px;border-radius:10px;background:linear-gradient(135deg,#E8001D,#A80015);color:#fff;font-weight:800;font-size:14px;letter-spacing:0.5px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(232,0,29,0.35);"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px rgba(232,0,29,0.5)'"
+                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(232,0,29,0.35)'">
+                🛒 ACESSAR NA HOTMART
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ MÉTODO PANFLETAGEM DIGITAL START ═══ -->
+          <article class="curso-card" data-reveal>
+            <div class="curso-thumb thumb-b" style="overflow:hidden;padding:0;">
+              <img
+                src="https://i.ibb.co/wZHvTPDq/teste.webp"
+                alt="Capa do curso Método Panfletagem Digital Start"
+                style="width:100%;height:100%;object-fit:cover;display:none;"
+                onload="this.style.display='block';this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              >
+              <span style="font-size:60px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">📣</span>
+            </div>
+            <div class="curso-body">
+              <div class="curso-meta">
+                <span class="nivel nivel-iniciante">Iniciante</span>
+                <span class="curso-rating">★★★★★ (5.0)</span>
+              </div>
+              <h3 class="curso-title">MÉTODO PANFLETAGEM DIGITAL START</h3>
+              <p class="curso-desc">O curso de panfletagem digital mais completo da internet. Aprenda a oferecer serviços de gestão de tráfego pago de forma simples, sem precisar acessar BM do cliente. 4 métodos poderosos para anunciar qualquer negócio.</p>
+              <div class="curso-specs">
+                <span>📣 4 métodos de prospecção</span>
+                <span>💰 Gestão de tráfego</span>
+                <span>⭐ 7 avaliações</span>
+                <span>🏆 Bem avaliado</span>
+              </div>
+              <div class="curso-footer">
+                <div class="curso-price price-paid">
+                  <span style="font-size:11px;color:var(--cinza-light);display:block;font-family:var(--fonte-corpo);font-weight:400;margin-bottom:2px;">Ver preço em</span>
+                  Hotmart
+                </div>
+                <a href="https://go.hotmart.com/X104559228Q" target="_blank" rel="noopener sponsored" class="btn-curso">Ver Curso →</a>
+              </div>
+              <a href="https://go.hotmart.com/X104559228Q" target="_blank" rel="noopener sponsored"
+                style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:13px;border-radius:10px;background:linear-gradient(135deg,#E8001D,#A80015);color:#fff;font-weight:800;font-size:14px;letter-spacing:0.5px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(232,0,29,0.35);"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px rgba(232,0,29,0.5)'"
+                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(232,0,29,0.35)'">
+                🛒 ACESSAR NA HOTMART
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ AFILIADO DE SUCESSO ═══ -->
+          <article class="curso-card" data-reveal>
+            <div class="curso-thumb thumb-c" style="overflow:hidden;padding:0;">
+              <img
+                src="https://i.ibb.co/r2jnL7Jh/teste.webp"
+                alt="Capa do curso Afiliado de Sucesso"
+                style="width:100%;height:100%;object-fit:cover;display:none;"
+                onload="this.style.display='block';this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              >
+              <span style="font-size:60px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">🏆</span>
+            </div>
+            <div class="curso-body">
+              <div class="curso-meta">
+                <span class="nivel nivel-iniciante">Iniciante</span>
+                <span class="curso-rating">★★★★★ (5.0)</span>
+              </div>
+              <h3 class="curso-title">AFILIADO DE SUCESSO</h3>
+              <p class="curso-desc">Treinamento completo sobre vendas como afiliado nas redes sociais. Estratégias de copy, tráfego e e-mail marketing com grupo de suporte, aulas bônus e comunidade com os melhores livros do mercado digital.</p>
+              <div class="curso-specs">
+                <span>📱 Vendas em redes sociais</span>
+                <span>✉️ E-mail marketing</span>
+                <span>👥 Grupo de suporte</span>
+                <span>🎁 Aulas bônus</span>
+              </div>
+              <div class="curso-footer">
+                <div class="curso-price price-paid">
+                  <span style="font-size:20px;font-family:var(--fonte-display);color:var(--vermelho-mid);">R$ 23,40</span>
+                  <span style="font-size:10px;color:var(--cinza-light);font-family:var(--fonte-corpo);font-weight:400;">ou 2x de R$ 12,32 no cartão</span>
+                </div>
+                <a href="https://go.hotmart.com/S104559267E" target="_blank" rel="noopener sponsored" class="btn-curso">Ver Curso →</a>
+              </div>
+              <a href="https://go.hotmart.com/S104559267E" target="_blank" rel="noopener sponsored"
+                style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:13px;border-radius:10px;background:linear-gradient(135deg,#E8001D,#A80015);color:#fff;font-weight:800;font-size:14px;letter-spacing:0.5px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(232,0,29,0.35);"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px rgba(232,0,29,0.5)'"
+                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(232,0,29,0.35)'">
+                🛒 ACESSAR NA HOTMART
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ PRIMEIRA VENDA EM 24H ═══ -->
+          <article class="curso-card" data-reveal>
+            <div class="curso-thumb thumb-a" style="overflow:hidden;padding:0;">
+              <img
+                src="https://static-media.hotmart.com/6VoHQ_-bXMrFOCLrARpc9q-0nuo=/300x300/smart/filters:format(webp):background_color(white)/hotmart/product_pictures/ce7784b6-7e69-43b3-9977-32c9cec52bc3/PRIMEIRAVENDAEM24HLOGOCOMDINHEIRO.png"
+                alt="Capa do curso Primeira Venda em 24H"
+                style="width:100%;height:100%;object-fit:cover;display:none;"
+                onload="this.style.display='block';this.nextElementSibling.style.display='none';"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+              >
+              <span style="font-size:60px;display:flex;align-items:center;justify-content:center;width:100%;height:100%;">💰</span>
+            </div>
+            <div class="curso-body">
+              <div class="curso-meta">
+                <span class="nivel nivel-iniciante">Iniciante</span>
+                <span class="curso-rating">★★★★★ (5.0)</span>
+              </div>
+              <h3 class="curso-title">PRIMEIRA VENDA EM 24H</h3>
+              <p class="curso-desc">Treinamento dinâmico e prático para quem está ingressando no universo digital e quer conquistar os primeiros resultados. Aprenda diretamente no celular com um método direto ao ponto.</p>
+              <div class="curso-specs">
+                <span>📱 100% pelo celular</span>
+                <span>⚡ Método rápido</span>
+                <span>⭐ 4 avaliações</span>
+                <span>🏆 Bem avaliado</span>
+              </div>
+              <div class="curso-footer">
+                <div class="curso-price price-paid">
+                  <span style="font-size:20px;font-family:var(--fonte-display);color:var(--vermelho-mid);">R$ 197,00</span>
+                  <span style="font-size:10px;color:var(--cinza-light);font-family:var(--fonte-corpo);font-weight:400;">ou 12x de R$ 20,37 no cartão</span>
+                </div>
+                <a href="https://go.hotmart.com/W104563995W?dp=1" target="_blank" rel="noopener sponsored" class="btn-curso">Ver Curso →</a>
+              </div>
+              <a href="https://go.hotmart.com/W104563995W?dp=1" target="_blank" rel="noopener sponsored"
+                style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:13px;border-radius:10px;background:linear-gradient(135deg,#E8001D,#A80015);color:#fff;font-weight:800;font-size:14px;letter-spacing:0.5px;text-decoration:none;transition:all 0.3s;box-shadow:0 6px 20px rgba(232,0,29,0.35);"
+                onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 12px 28px rgba(232,0,29,0.5)'"
+                onmouseout="this.style.transform='';this.style.boxShadow='0 6px 20px rgba(232,0,29,0.35)'">
+                🛒 ACESSAR NA HOTMART
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ ADICIONE MAIS CURSOS AQUI ═══ -->
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Store Invictus — Página inicial">
+          <img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="42" height="42">
+          <div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div>
+        </a>
+        <p class="footer-desc">Ajudando pessoas a construírem uma renda online sólida através de cursos e ebooks de marketing digital.</p>
+        <nav class="footer-social" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">🎵</a>
+          <a href="https://wa.me/5512988060658" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">💬</a>
+        </nav>
+      </div>
+      <div class="footer-col"><h4>Conteúdo</h4><nav class="footer-links"><a href="cursos.html">Cursos Online</a><a href="ebooks.html">Ebooks</a><a href="cursos.html#categorias">Categorias</a></nav></div>
+      <div class="footer-col"><h4>Store Invictus</h4><nav class="footer-links"><a href="sobre.html">Sobre Nós</a><a href="contato.html">Contato</a><a href="contato.html#faq">FAQ</a></nav></div>
+      <div class="footer-col"><h4>Legal</h4><nav class="footer-links"><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a><a href="afiliado.html">Aviso de Afiliado</a></nav></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner">
+      <span>© 2026 Store Invictus. Todos os direitos reservados.</span>
+      <span class="footer-afiliado">⚠️ Links de afiliados — comissão sem custo para você</span>
+      <span>Feito com ❤️ para o mercado digital</span>
+    </div></div></div>
+  </footer>
+
+  <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <span class="wa-pulse" aria-hidden="true"></span>
+    <div class="wa-tooltip" aria-hidden="true">Tire suas dúvidas! 😊</div>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.563 4.139 1.542 5.874L0 24l6.302-1.512A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.002-1.366l-.358-.213-3.742.897.938-3.63-.234-.374A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  </a>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
