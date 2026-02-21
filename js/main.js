@@ -5,7 +5,7 @@
    - Filtros realmente filtram cards por data-categoria
    - Counter com threshold menor para mobile
    - FAQ max-height dinâmico via scrollHeight
-   - Validação real do formulário de contato
+
    - aria-pressed sincronizado nos filtros
    ================================================ */
 
@@ -215,16 +215,6 @@
       });
     });
   });
-
-  /* ────────────────────────────────────────────
-     FORMULÁRIO DE CONTATO — Getform.io (HTML puro, sem JS)
-  ──────────────────────────────────────────── */
-  // Formulário submete diretamente via HTML action/method, sem interceptação JS
-
-
-  function simulateDelay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
   /* ────────────────────────────────────────────
      SCROLL SUAVE PARA ÂNCORAS
