@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato | Store Invictus — Marketing Digital</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo.png">
+  <meta name="theme-color" content="#E8001D">
+  <meta name="description" content="Entre em contato com a Store Invictus. Tire dúvidas sobre cursos, ebooks e marketing digital pelo WhatsApp ou formulário.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="/contato.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+    .form-card{background:var(--cinza-dark);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-xl);padding:44px;}
+    .form-card h2{font-family:var(--fonte-display);font-size:32px;letter-spacing:2px;margin-bottom:6px;}
+    .form-card .form-sub{color:var(--cinza-light);font-size:14px;margin-bottom:32px;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+    .form-group{margin-bottom:18px;}
+    .form-group label{display:block;font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--cinza-muted);margin-bottom:7px;}
+    .form-group input,.form-group textarea,.form-group select{width:100%;background:var(--cinza);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:12px 16px;color:var(--branco);font-size:14px;transition:var(--trans);outline:none;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--vermelho);background:rgba(232,0,29,0.05);box-shadow:0 0 0 3px rgba(232,0,29,0.1);}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--cinza-light);}
+    .form-group select option{background:var(--cinza-dark);}
+    .form-group textarea{resize:vertical;min-height:130px;}
+    /* FIX: campo com erro */
+    .form-group input.campo-erro,.form-group textarea.campo-erro{border-color:var(--vermelho)!important;box-shadow:0 0 0 3px rgba(232,0,29,0.15)!important;}
+    .form-submit{width:100%;padding:15px;border-radius:50px;background:var(--grad-marca);color:#fff;border:none;font-size:15px;font-weight:700;cursor:pointer;transition:var(--trans);margin-top:4px;}
+    .form-submit:hover{transform:translateY(-2px);box-shadow:0 12px 30px var(--vermelho-glow);}
+    .form-submit:disabled{opacity:0.65;cursor:not-allowed;transform:none;}
+    .contato-info{display:flex;flex-direction:column;gap:16px;}
+    .info-card{background:var(--cinza-dark);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-lg);padding:22px 24px;display:flex;align-items:center;gap:18px;transition:var(--trans);color:inherit;}
+    .info-card:hover{border-color:var(--vermelho);transform:translateX(5px);}
+    .ic-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+    .info-card h4{font-size:13.5px;font-weight:700;margin-bottom:3px;}
+    .info-card .ic-value{font-size:14px;font-weight:600;margin-bottom:2px;}
+    .info-card .ic-sub{font-size:12px;color:var(--cinza-light);}
+    .hours-box{background:var(--cinza-dark);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-lg);padding:22px 24px;}
+    .hours-box h4{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cinza-muted);margin-bottom:16px;}
+    .hours-row{display:flex;justify-content:space-between;font-size:14px;margin-bottom:10px;}
+    .hours-row:last-child{margin-bottom:0;}
+    /* FAQ */
+    .faq-section{background:var(--preto-2);}
+    .faq-list{max-width:780px;margin:56px auto 0;display:flex;flex-direction:column;gap:12px;}
+    .faq-item{background:var(--cinza-dark);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius-lg);overflow:hidden;}
+    .faq-question{width:100%;padding:18px 22px;background:transparent;border:none;color:var(--branco);font-size:14.5px;font-weight:600;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:var(--trans-fast);}
+    .faq-question:hover{color:var(--vermelho);}
+    .faq-arrow{transition:transform 0.35s var(--ease);flex-shrink:0;opacity:0.6;font-style:normal;}
+    .faq-item.open .faq-arrow{transform:rotate(180deg);opacity:1;}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s var(--ease);}
+    .faq-body{padding:0 22px 20px;color:var(--cinza-light);font-size:13.5px;line-height:1.8;border-top:1px solid rgba(255,255,255,0.05);padding-top:14px;}
+    @media(max-width:768px){.contato-grid{grid-template-columns:1fr;}.form-card{padding:28px 20px;}.form-row{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Ir para o conteúdo</a>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navegação principal">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo" aria-label="Store Invictus — Página inicial">
+        <img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="42" height="42">
+        <div class="logo-text">
+          <span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cursos.html">Cursos</a></li>
+        <li><a href="ebooks.html">Ebooks</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="cursos.html" class="btn-nav">Explorar Cursos</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
+    <a href="index.html">Início</a><a href="cursos.html">Cursos</a>
+    <a href="ebooks.html">Ebooks</a><a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="cursos.html" class="btn-nav">Explorar Cursos →</a>
+  </nav>
+
+  <main id="main-content">
+    <header class="page-hero">
+      <div class="hero-pattern" aria-hidden="true"></div><div class="grid-bg" aria-hidden="true"></div><div class="noise-overlay" aria-hidden="true"></div>
+      <div class="container page-hero-inner">
+        <span class="badge badge-verde">💬 Fale Conosco</span>
+        <div class="divider divider-center"></div>
+        <h1>VAMOS <span class="text-gradient">CONVERSAR</span></h1>
+        <p>Tem dúvidas sobre cursos, ebooks ou marketing digital? A Store Invictus está aqui para ajudar!</p>
+      </div>
+    </header>
+
+    <section class="section" aria-labelledby="contato-heading">
+      <div class="container">
+        <h2 id="contato-heading" class="sr-only">Formulário e informações de contato</h2>
+        <div class="contato-grid">
+
+          <!-- FORMULÁRIO — FIX: validação real + feedback visual -->
+          <div class="form-card" data-reveal>
+            <h2>ENVIE UMA MENSAGEM</h2>
+            <p class="form-sub">Preencha o formulário e responderei o mais rápido possível.</p>
+            <!-- NOTA: Para ativar envio real, substitua YOUR_FORMSPREE_ID no main.js -->
+            <form id="contact-form" action="https://getform.io/f/6cy6zudbfbe" method="POST" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome">Nome *</label>
+                  <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="whats">WhatsApp</label>
+                  <input type="tel" id="whats" name="whatsapp" placeholder="(11) 99999-9999" autocomplete="tel">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="assunto">Assunto</label>
+                <select id="assunto" name="assunto">
+                  <option value="">Selecione um assunto</option>
+                  <option value="curso">Dúvida sobre curso</option>
+                  <option value="ebook">Dúvida sobre ebook</option>
+                  <option value="marketing">Marketing digital</option>
+                  <option value="parceria">Parcerias</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mensagem">Mensagem *</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
+              </div>
+              <button type="submit" class="form-submit">Enviar Mensagem ✉️</button>
+            </form>
+          </div>
+
+          <!-- INFO -->
+          <div class="contato-info" data-reveal>
+            <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus." target="_blank" rel="noopener" class="info-card">
+              <div class="ic-icon" style="background:rgba(37,211,102,0.12)" aria-hidden="true">💬</div>
+              <div>
+                <h4>WhatsApp</h4>
+                <div class="ic-value" style="color:var(--verde)">(12) 98806-0658</div>
+                <div class="ic-sub">Resposta mais rápida por aqui!</div>
+              </div>
+            </a>
+            <a href="mailto:storeinvictus7@gmail.com" class="info-card">
+              <div class="ic-icon" style="background:rgba(232,0,29,0.12)" aria-hidden="true">📧</div>
+              <div>
+                <h4>Email</h4>
+                <div class="ic-value">storeinvictus7@gmail.com</div>
+                <div class="ic-sub">Respondo em até 24 horas</div>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="info-card" aria-label="Instagram da Store Invictus">
+              <div class="ic-icon" style="background:rgba(232,0,29,0.12)" aria-hidden="true">📸</div>
+              <div>
+                <h4>Instagram</h4>
+                <div class="ic-value">@storeinvictus</div>
+                <div class="ic-sub">Conteúdo diário sobre marketing</div>
+              </div>
+            </a>
+            <div class="hours-box" role="complementary" aria-label="Horário de atendimento">
+              <h4>⏰ Horário de Atendimento</h4>
+              <div class="hours-row">
+                <span>Segunda — Sexta</span>
+                <strong style="color:var(--verde)">09:00 – 18:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Sábado</span>
+                <strong style="color:var(--cinza-light)">09:00 – 13:00</strong>
+              </div>
+              <div class="hours-row">
+                <span>Domingo</span>
+                <strong style="color:var(--cinza-light)">Fechado</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ — FIX: max-height dinâmico via JS -->
+    <section class="section faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="text-center" data-reveal>
+          <span class="badge badge-verm">Perguntas Frequentes</span>
+          <div class="divider divider-center"></div>
+          <h2 class="section-title" id="faq-heading">DÚVIDAS <span class="text-gradient">FREQUENTES</span></h2>
+        </div>
+        <div class="faq-list" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              Os cursos são seus ou são de terceiros?
+              <i class="faq-arrow" aria-hidden="true">⌄</i>
+            </button>
+            <div class="faq-answer" id="faq-1" role="region">
+              <div class="faq-body">Os cursos e ebooks da Store Invictus são produtos de terceiros — sou afiliado dessas plataformas. Isso significa que ganho uma comissão quando você compra através dos meus links, sem nenhum custo extra para você.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              Como funciona o suporte após a compra?
+              <i class="faq-arrow" aria-hidden="true">⌄</i>
+            </button>
+            <div class="faq-answer" id="faq-2" role="region">
+              <div class="faq-body">Para dúvidas técnicas sobre o conteúdo do curso ou ebook, você deve contatar o suporte do produtor. Para escolher qual produto é ideal para você ou tirar dúvidas sobre marketing digital em geral, estou disponível pelo WhatsApp e email!</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              Posso confiar nos produtos que a Store Invictus recomenda?
+              <i class="faq-arrow" aria-hidden="true">⌄</i>
+            </button>
+            <div class="faq-answer" id="faq-3" role="region">
+              <div class="faq-body">Absolutamente. Só recomendo produtos que eu mesmo avaliaria antes de indicar. Minha reputação e a confiança de quem me acompanha valem mais do que qualquer comissão. Faço uma curadoria cuidadosa de tudo que aparece aqui.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              Os cursos têm garantia de reembolso?
+              <i class="faq-arrow" aria-hidden="true">⌄</i>
+            </button>
+            <div class="faq-answer" id="faq-4" role="region">
+              <div class="faq-body">A maioria dos produtos digitais nas principais plataformas brasileiras (Hotmart, Eduzz, Monetizze) possui garantia de 7 a 30 dias, conforme o Código de Defesa do Consumidor. Verifique sempre os termos na página oficial de venda do produto antes de comprar.</div>
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              Por onde começo no marketing digital?
+              <i class="faq-arrow" aria-hidden="true">⌄</i>
+            </button>
+            <div class="faq-answer" id="faq-5" role="region">
+              <div class="faq-body">Se você está começando do zero, recomendo primeiro entender os fundamentos: o que é marketing digital, como funcionam funis de venda e quais são as principais plataformas. Me manda uma mensagem no WhatsApp e te ajudo a montar um plano de estudos personalizado totalmente gratuito!</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="footer-top"><div class="container"><div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Store Invictus — Página inicial">
+          <img src="assets/img/logo.png" alt="Store Invictus" class="logo-img" width="42" height="42">
+          <div class="logo-text"><span class="logo-store">STORE</span><span class="logo-invictus">INVICT<span class="hl">US</span></span></div>
+        </a>
+        <p class="footer-desc">Ajudando pessoas a construírem uma renda online sólida através de cursos e ebooks de marketing digital.</p>
+        <nav class="footer-social" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok">🎵</a>
+          <a href="https://wa.me/5512988060658" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">💬</a>
+        </nav>
+      </div>
+      <div class="footer-col"><h4>Conteúdo</h4><nav class="footer-links"><a href="cursos.html">Cursos Online</a><a href="ebooks.html">Ebooks</a></nav></div>
+      <div class="footer-col"><h4>Store Invictus</h4><nav class="footer-links"><a href="sobre.html">Sobre Nós</a><a href="contato.html">Contato</a><a href="contato.html#faq">FAQ</a></nav></div>
+      <div class="footer-col"><h4>Legal</h4><nav class="footer-links"><a href="privacidade.html">Política de Privacidade</a><a href="termos.html">Termos de Uso</a><a href="afiliado.html">Aviso de Afiliado</a></nav></div>
+    </div></div></div>
+    <div class="footer-bottom"><div class="container"><div class="footer-bottom-inner">
+      <span>© 2026 Store Invictus. Todos os direitos reservados.</span>
+      <span class="footer-afiliado">⚠️ Links de afiliados — comissão sem custo para você</span>
+      <span>Feito com ❤️ para o mercado digital</span>
+    </div></div></div>
+  </footer>
+
+  <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <span class="wa-pulse" aria-hidden="true"></span>
+    <div class="wa-tooltip" aria-hidden="true">Tire suas dúvidas! 😊</div>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.137.563 4.139 1.542 5.874L0 24l6.302-1.512A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.002-1.366l-.358-.213-3.742.897.938-3.63-.234-.374A9.78 9.78 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+  </a>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
