@@ -98,90 +98,38 @@
 
     <section class="section" aria-labelledby="contato-heading">
       <div class="container">
-        <h2 id="contato-heading" class="sr-only">Formulário e informações de contato</h2>
-        <div class="contato-grid">
+        <h2 id="contato-heading" class="sr-only">Informações de contato</h2>
+        <div style="max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:16px;" data-reveal>
 
-          <!-- FORMULÁRIO — FIX: validação real + feedback visual -->
-          <div class="form-card" data-reveal>
-            <h2>ENVIE UMA MENSAGEM</h2>
-            <p class="form-sub">Preencha o formulário e responderei o mais rápido possível.</p>
-            <!-- NOTA: Para ativar envio real, substitua YOUR_FORMSPREE_ID no main.js -->
-            <form action="https://getform.io/f/6cy6zudbfbe" method="POST">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="nome">Nome *</label>
-                  <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required autocomplete="given-name">
-                </div>
-                <div class="form-group">
-                  <label for="whats">WhatsApp</label>
-                  <input type="tel" id="whats" name="whatsapp" placeholder="(11) 99999-9999" autocomplete="tel">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required autocomplete="email">
-              </div>
-              <div class="form-group">
-                <label for="assunto">Assunto</label>
-                <select id="assunto" name="assunto">
-                  <option value="">Selecione um assunto</option>
-                  <option value="curso">Dúvida sobre curso</option>
-                  <option value="ebook">Dúvida sobre ebook</option>
-                  <option value="marketing">Marketing digital</option>
-                  <option value="parceria">Parcerias</option>
-                  <option value="outro">Outro</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="mensagem">Mensagem *</label>
-                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required></textarea>
-              </div>
-              <button type="submit" class="form-submit">Enviar Mensagem ✉️</button>
-            </form>
-          </div>
-
-          <!-- INFO -->
-          <div class="contato-info" data-reveal>
-            <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus." target="_blank" rel="noopener" class="info-card">
-              <div class="ic-icon" style="background:rgba(37,211,102,0.12)" aria-hidden="true">💬</div>
-              <div>
-                <h4>WhatsApp</h4>
-                <div class="ic-value" style="color:var(--verde)">(12) 98806-0658</div>
-                <div class="ic-sub">Resposta mais rápida por aqui!</div>
-              </div>
-            </a>
-            <a href="mailto:storeinvictus7@gmail.com" class="info-card">
-              <div class="ic-icon" style="background:rgba(232,0,29,0.12)" aria-hidden="true">📧</div>
-              <div>
-                <h4>Email</h4>
-                <div class="ic-value">storeinvictus7@gmail.com</div>
-                <div class="ic-sub">Respondo em até 24 horas</div>
-              </div>
-            </a>
-            <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="info-card" aria-label="Instagram da Store Invictus">
-              <div class="ic-icon" style="background:rgba(232,0,29,0.12)" aria-hidden="true">📸</div>
-              <div>
-                <h4>Instagram</h4>
-                <div class="ic-value">@storeinvictus</div>
-                <div class="ic-sub">Conteúdo diário sobre marketing</div>
-              </div>
-            </a>
-            <div class="hours-box" role="complementary" aria-label="Horário de atendimento">
-              <h4>⏰ Horário de Atendimento</h4>
-              <div class="hours-row">
-                <span>Segunda — Sexta</span>
-                <strong style="color:var(--verde)">09:00 – 18:00</strong>
-              </div>
-              <div class="hours-row">
-                <span>Sábado</span>
-                <strong style="color:var(--cinza-light)">09:00 – 13:00</strong>
-              </div>
-              <div class="hours-row">
-                <span>Domingo</span>
-                <strong style="color:var(--cinza-light)">Fechado</strong>
-              </div>
+          <!-- WHATSAPP -->
+          <a href="https://wa.me/5512988060658?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Store%20Invictus." target="_blank" rel="noopener" class="info-card">
+            <div class="ic-icon" style="background:rgba(37,211,102,0.12)" aria-hidden="true">💬</div>
+            <div>
+              <h4>WhatsApp</h4>
+              <div class="ic-value" style="color:var(--verde)">(12) 98806-0658</div>
+              <div class="ic-sub">Resposta mais rápida por aqui!</div>
             </div>
-          </div>
+          </a>
+
+          <!-- INSTAGRAM -->
+          <a href="https://www.instagram.com/store_invictus7/" target="_blank" rel="noopener" class="info-card">
+            <div class="ic-icon" style="background:rgba(232,0,29,0.12)" aria-hidden="true">📸</div>
+            <div>
+              <h4>Instagram</h4>
+              <div class="ic-value">@store_invictus7</div>
+              <div class="ic-sub">Conteúdo diário sobre marketing digital</div>
+            </div>
+          </a>
+
+          <!-- TIKTOK -->
+          <a href="https://www.tiktok.com/@store.invictus" target="_blank" rel="noopener" class="info-card">
+            <div class="ic-icon" style="background:rgba(255,255,255,0.06)" aria-hidden="true">🎵</div>
+            <div>
+              <h4>TikTok</h4>
+              <div class="ic-value">@store.invictus</div>
+              <div class="ic-sub">Dicas rápidas de marketing</div>
+            </div>
+          </a>
 
         </div>
       </div>
