@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Disallow: /assets/img/favicon*
-
-Sitemap: https://storeinvictus.com.br/sitemap.xml
